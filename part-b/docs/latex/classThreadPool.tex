@@ -1,0 +1,65 @@
+\doxysection{Thread\+Pool Class Reference}
+\hypertarget{classThreadPool}{}\label{classThreadPool}\index{ThreadPool@{ThreadPool}}
+
+
+Implements a thread pool for background operations.  
+
+
+
+
+{\ttfamily \#include $<$storage\+\_\+engine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classThreadPool_a931f8f409a49a27d5e779f2135eb5519}{Thread\+Pool}} (size\+\_\+t num\+\_\+threads)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classThreadPool}{Thread\+Pool}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThreadPool_a6171cb42d1c705ef840be91fda91c8bc}{enqueue}} (std\+::function$<$ void()$>$ task)
+\begin{DoxyCompactList}\small\item\em Enqueues a task into the thread pool. \end{DoxyCompactList}\item 
+\Hypertarget{classThreadPool_a44d3d2ab618970605e684efc216655eb}\label{classThreadPool_a44d3d2ab618970605e684efc216655eb} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Thread\+Pool} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classThreadPool}{Thread\+Pool}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a thread pool for background operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classThreadPool_a931f8f409a49a27d5e779f2135eb5519}\label{classThreadPool_a931f8f409a49a27d5e779f2135eb5519} 
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{ThreadPool()}{ThreadPool()}}
+{\footnotesize\ttfamily Thread\+Pool\+::\+Thread\+Pool (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+\_\+threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classThreadPool}{Thread\+Pool}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+threads} & The number of threads in the pool. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classThreadPool_a6171cb42d1c705ef840be91fda91c8bc}\label{classThreadPool_a6171cb42d1c705ef840be91fda91c8bc} 
+\index{ThreadPool@{ThreadPool}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily void Thread\+Pool\+::enqueue (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enqueues a task into the thread pool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & The task to enqueue. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{storage__engine_8h}{storage\+\_\+engine.\+h}}\end{DoxyCompactItemize}

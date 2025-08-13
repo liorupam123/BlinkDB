@@ -1,0 +1,84 @@
+\doxysection{Bloom\+Filter Class Reference}
+\hypertarget{classBloomFilter}{}\label{classBloomFilter}\index{BloomFilter@{BloomFilter}}
+
+
+Implements a bloom filter for efficient negative lookups.  
+
+
+
+
+{\ttfamily \#include $<$storage\+\_\+engine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBloomFilter_ad68940597e0185857b827b3fc726eca5}{Bloom\+Filter}} (size\+\_\+t expected\+\_\+items=10000, double false\+\_\+positive\+\_\+rate=0.\+01)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classBloomFilter}{Bloom\+Filter}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBloomFilter_a6a4586b3259b52bf51502c5daff184d4}{add}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em Adds a key to the bloom filter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBloomFilter_acd0082c5651c932a75eba279970eb290}{might\+Contain}} (const std\+::string \&key) const
+\begin{DoxyCompactList}\small\item\em Checks if a key might be in the bloom filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a bloom filter for efficient negative lookups. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBloomFilter_ad68940597e0185857b827b3fc726eca5}\label{classBloomFilter_ad68940597e0185857b827b3fc726eca5} 
+\index{BloomFilter@{BloomFilter}!BloomFilter@{BloomFilter}}
+\index{BloomFilter@{BloomFilter}!BloomFilter@{BloomFilter}}
+\doxysubsubsection{\texorpdfstring{BloomFilter()}{BloomFilter()}}
+{\footnotesize\ttfamily Bloom\+Filter\+::\+Bloom\+Filter (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{expected\+\_\+items = {\ttfamily 10000},  }\item[{double}]{false\+\_\+positive\+\_\+rate = {\ttfamily 0.01} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classBloomFilter}{Bloom\+Filter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+\_\+items} & The expected number of items to store. \\
+\hline
+{\em false\+\_\+positive\+\_\+rate} & The desired false positive rate. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBloomFilter_a6a4586b3259b52bf51502c5daff184d4}\label{classBloomFilter_a6a4586b3259b52bf51502c5daff184d4} 
+\index{BloomFilter@{BloomFilter}!add@{add}}
+\index{add@{add}!BloomFilter@{BloomFilter}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Bloom\+Filter\+::add (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a key to the bloom filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classBloomFilter_acd0082c5651c932a75eba279970eb290}\label{classBloomFilter_acd0082c5651c932a75eba279970eb290} 
+\index{BloomFilter@{BloomFilter}!mightContain@{mightContain}}
+\index{mightContain@{mightContain}!BloomFilter@{BloomFilter}}
+\doxysubsubsection{\texorpdfstring{mightContain()}{mightContain()}}
+{\footnotesize\ttfamily bool Bloom\+Filter\+::might\+Contain (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a key might be in the bloom filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key might be in the filter, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{storage__engine_8h}{storage\+\_\+engine.\+h}}\end{DoxyCompactItemize}

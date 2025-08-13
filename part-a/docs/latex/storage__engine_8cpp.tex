@@ -1,0 +1,26 @@
+\doxysection{storage\+\_\+engine.\+cpp File Reference}
+\hypertarget{storage__engine_8cpp}{}\label{storage__engine_8cpp}\index{storage\_engine.cpp@{storage\_engine.cpp}}
+
+
+Implementation of the LSM Tree based key-\/value storage engine.  
+
+
+{\ttfamily \#include "{}storage\+\_\+engine.\+h"{}}\newline
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+Include dependency graph for storage\+\_\+engine.\+cpp\+:
+% FIG 0
+
+
+\doxysubsection{Detailed Description}
+Implementation of the LSM Tree based key-\/value storage engine. 
+
+This file contains the implementation of the \doxylink{classStorageEngine}{Storage\+Engine} class, which provides a persistent key-\/value storage system using an LSM (Log-\/\+Structured Merge) Tree. The engine features\+:
+\begin{DoxyItemize}
+\item LRU caching for frequently accessed keys
+\item In-\/memory Mem\+Table for recent writes
+\item Disk-\/based SSTables organized in levels
+\item Background compaction to maintain performance
+\item Persistence via sorted disk files 
+\end{DoxyItemize}

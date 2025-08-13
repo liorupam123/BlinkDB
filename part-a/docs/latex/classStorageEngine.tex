@@ -1,0 +1,182 @@
+\doxysection{Storage\+Engine Class Reference}
+\hypertarget{classStorageEngine}{}\label{classStorageEngine}\index{StorageEngine@{StorageEngine}}
+
+
+A storage engine implementation using an LSM Tree with LRU caching.  
+
+
+
+
+{\ttfamily \#include $<$storage\+\_\+engine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStorageEngine_a92d19f4a0ba112c95e8412d21c2bc64c}{Storage\+Engine}} (const string \&db\+\_\+dir="{}blinkdb\+\_\+data"{})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classStorageEngine}{Storage\+Engine}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStorageEngine_a689e3d600ae1d5540907ce5c44c3666f}{\texorpdfstring{$\sim$}{\string~}\+Storage\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classStorageEngine}{Storage\+Engine}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorageEngine_ab8cdd82ada0d4e2cc8eac9b4cd83ba2c}{set}} (const char \texorpdfstring{$\ast$}{*}key, const char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Set a key-\/value pair in the storage engine. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classStorageEngine_a57cc9e6abd5bb87818d15b7f105aa25e}{get}} (const char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Get the value associated with a key. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorageEngine_a948183bca90a6fcff5e01a5735f4663b}{del}} (const char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Delete a key-\/value pair from the storage engine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStorageEngine_aae6700e4aa16fa710f18a0317c5217b4}{sync}} ()
+\begin{DoxyCompactList}\small\item\em Synchronize the in-\/memory data with disk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStorageEngine_afdf59edfccc620c12940e8dd1e5fdf32}{debug\+\_\+print\+\_\+tree}} () const
+\begin{DoxyCompactList}\small\item\em Print debug information about the LSM tree structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A storage engine implementation using an LSM Tree with LRU caching. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classStorageEngine_a92d19f4a0ba112c95e8412d21c2bc64c}\label{classStorageEngine_a92d19f4a0ba112c95e8412d21c2bc64c} 
+\index{StorageEngine@{StorageEngine}!StorageEngine@{StorageEngine}}
+\index{StorageEngine@{StorageEngine}!StorageEngine@{StorageEngine}}
+\doxysubsubsection{\texorpdfstring{StorageEngine()}{StorageEngine()}}
+{\footnotesize\ttfamily Storage\+Engine\+::\+Storage\+Engine (\begin{DoxyParamCaption}\item[{const string \&}]{db\+\_\+dir = {\ttfamily "{}blinkdb\+\_\+data"{}} }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classStorageEngine}{Storage\+Engine}. 
+
+Constructs a \doxylink{classStorageEngine}{Storage\+Engine} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em db\+\_\+dir} & Directory for database files\\
+\hline
+{\em db\+\_\+dir} & Directory for the database files \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classStorageEngine_a689e3d600ae1d5540907ce5c44c3666f}\label{classStorageEngine_a689e3d600ae1d5540907ce5c44c3666f} 
+\index{StorageEngine@{StorageEngine}!````~StorageEngine@{\texorpdfstring{$\sim$}{\string~}StorageEngine}}
+\index{````~StorageEngine@{\texorpdfstring{$\sim$}{\string~}StorageEngine}!StorageEngine@{StorageEngine}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}StorageEngine()}{\string~StorageEngine()}}
+{\footnotesize\ttfamily Storage\+Engine\+::\texorpdfstring{$\sim$}{\string~}\+Storage\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for \doxylink{classStorageEngine}{Storage\+Engine}. 
+
+Destructor -\/ cleans up resources and ensures data is saved. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStorageEngine_afdf59edfccc620c12940e8dd1e5fdf32}\label{classStorageEngine_afdf59edfccc620c12940e8dd1e5fdf32} 
+\index{StorageEngine@{StorageEngine}!debug\_print\_tree@{debug\_print\_tree}}
+\index{debug\_print\_tree@{debug\_print\_tree}!StorageEngine@{StorageEngine}}
+\doxysubsubsection{\texorpdfstring{debug\_print\_tree()}{debug\_print\_tree()}}
+{\footnotesize\ttfamily void Storage\+Engine\+::debug\+\_\+print\+\_\+tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Print debug information about the LSM tree structure. 
+
+Prints the LSM Tree structure for debugging purposes. \Hypertarget{classStorageEngine_a948183bca90a6fcff5e01a5735f4663b}\label{classStorageEngine_a948183bca90a6fcff5e01a5735f4663b} 
+\index{StorageEngine@{StorageEngine}!del@{del}}
+\index{del@{del}!StorageEngine@{StorageEngine}}
+\doxysubsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily bool Storage\+Engine\+::del (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key }\end{DoxyParamCaption})}
+
+
+
+Delete a key-\/value pair from the storage engine. 
+
+Deletes a key-\/value pair from the storage engine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if operation succeeded 
+\end{DoxyReturn}
+\Hypertarget{classStorageEngine_a57cc9e6abd5bb87818d15b7f105aa25e}\label{classStorageEngine_a57cc9e6abd5bb87818d15b7f105aa25e} 
+\index{StorageEngine@{StorageEngine}!get@{get}}
+\index{get@{get}!StorageEngine@{StorageEngine}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Storage\+Engine\+::get (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key }\end{DoxyParamCaption})}
+
+
+
+Get the value associated with a key. 
+
+Retrieves the value associated with a key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value associated with the key, or nullptr if not found
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to look up \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value as a C string, or nullptr if key not found 
+\end{DoxyReturn}
+\Hypertarget{classStorageEngine_ab8cdd82ada0d4e2cc8eac9b4cd83ba2c}\label{classStorageEngine_ab8cdd82ada0d4e2cc8eac9b4cd83ba2c} 
+\index{StorageEngine@{StorageEngine}!set@{set}}
+\index{set@{set}!StorageEngine@{StorageEngine}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily bool Storage\+Engine\+::set (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a key-\/value pair in the storage engine. 
+
+Sets a key-\/value pair in the storage engine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to set \\
+\hline
+{\em value} & The value to associate with the key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to set \\
+\hline
+{\em value} & The value to associate with the key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if operation succeeded 
+\end{DoxyReturn}
+\Hypertarget{classStorageEngine_aae6700e4aa16fa710f18a0317c5217b4}\label{classStorageEngine_aae6700e4aa16fa710f18a0317c5217b4} 
+\index{StorageEngine@{StorageEngine}!sync@{sync}}
+\index{sync@{sync}!StorageEngine@{StorageEngine}}
+\doxysubsubsection{\texorpdfstring{sync()}{sync()}}
+{\footnotesize\ttfamily void Storage\+Engine\+::sync (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Synchronize the in-\/memory data with disk. 
+
+Forces synchronization of data to disk.
+
+This method ensures that all pending operations are applied to the storage system and saved to disk immediately. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+storage\+\_\+engine.\+h\item 
+\mbox{\hyperlink{storage__engine_8cpp}{storage\+\_\+engine.\+cpp}}\end{DoxyCompactItemize}

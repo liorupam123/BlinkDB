@@ -1,0 +1,110 @@
+\doxysection{LRUCache\texorpdfstring{$<$}{<} K, V \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classLRUCache}{}\label{classLRUCache}\index{LRUCache$<$ K, V $>$@{LRUCache$<$ K, V $>$}}
+
+
+Implements an LRU (Least Recently Used) cache.  
+
+
+
+
+{\ttfamily \#include $<$storage\+\_\+engine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLRUCache_a5ea3c7e4c82be9490f0cda7eb495d130}{LRUCache}} (size\+\_\+t capacity=1000)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classLRUCache}{LRUCache}. \end{DoxyCompactList}\item 
+\Hypertarget{classLRUCache_aabee65999086d18df68de8d969515c30}\label{classLRUCache_aabee65999086d18df68de8d969515c30} 
+{\bfseries LRUCache} (const \mbox{\hyperlink{classLRUCache}{LRUCache}} \&)=delete
+\item 
+\Hypertarget{classLRUCache_adf3425927839d13634c2981d36e78fbe}\label{classLRUCache_adf3425927839d13634c2981d36e78fbe} 
+\mbox{\hyperlink{classLRUCache}{LRUCache}} \& {\bfseries operator=} (const \mbox{\hyperlink{classLRUCache}{LRUCache}} \&)=delete
+\item 
+\Hypertarget{classLRUCache_a6944704ad042d760e7d71f41e93bbd01}\label{classLRUCache_a6944704ad042d760e7d71f41e93bbd01} 
+{\bfseries LRUCache} (\mbox{\hyperlink{classLRUCache}{LRUCache}} \&\&)=delete
+\item 
+\Hypertarget{classLRUCache_ad6cc0321a601f321b26c173b7ff7d6bb}\label{classLRUCache_ad6cc0321a601f321b26c173b7ff7d6bb} 
+\mbox{\hyperlink{classLRUCache}{LRUCache}} \& {\bfseries operator=} (\mbox{\hyperlink{classLRUCache}{LRUCache}} \&\&)=delete
+\item 
+std\+::optional$<$ V $>$ \mbox{\hyperlink{classLRUCache_ad1e2e3f78966fdb1ca35ead0076f9edf}{get}} (const K \&key)
+\begin{DoxyCompactList}\small\item\em Retrieves a value from the cache. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLRUCache_a7b9212e727fe369b3b7fe5903f4fbee2}{put}} (const K \&key, const V \&value)
+\begin{DoxyCompactList}\small\item\em Inserts a key-\/value pair into the cache. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$\newline
+class LRUCache$<$ K, V $>$}
+Implements an LRU (Least Recently Used) cache. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em K} & The type of the cache keys. \\
+\hline
+{\em V} & The type of the cache values. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLRUCache_a5ea3c7e4c82be9490f0cda7eb495d130}\label{classLRUCache_a5ea3c7e4c82be9490f0cda7eb495d130} 
+\index{LRUCache$<$ K, V $>$@{LRUCache$<$ K, V $>$}!LRUCache@{LRUCache}}
+\index{LRUCache@{LRUCache}!LRUCache$<$ K, V $>$@{LRUCache$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{LRUCache()}{LRUCache()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{classLRUCache}{LRUCache}}$<$ K, V $>$\mbox{\hyperlink{classLRUCache}{\+::\+LRUCache}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{capacity = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructs an \doxylink{classLRUCache}{LRUCache}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & The maximum number of items the cache can hold. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLRUCache_ad1e2e3f78966fdb1ca35ead0076f9edf}\label{classLRUCache_ad1e2e3f78966fdb1ca35ead0076f9edf} 
+\index{LRUCache$<$ K, V $>$@{LRUCache$<$ K, V $>$}!get@{get}}
+\index{get@{get}!LRUCache$<$ K, V $>$@{LRUCache$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+std\+::optional$<$ V $>$ \mbox{\hyperlink{classLRUCache}{LRUCache}}$<$ K, V $>$\+::get (\begin{DoxyParamCaption}\item[{const K \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a value from the cache. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value if found, or std\+::nullopt if not found. 
+\end{DoxyReturn}
+\Hypertarget{classLRUCache_a7b9212e727fe369b3b7fe5903f4fbee2}\label{classLRUCache_a7b9212e727fe369b3b7fe5903f4fbee2} 
+\index{LRUCache$<$ K, V $>$@{LRUCache$<$ K, V $>$}!put@{put}}
+\index{put@{put}!LRUCache$<$ K, V $>$@{LRUCache$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+void \mbox{\hyperlink{classLRUCache}{LRUCache}}$<$ K, V $>$\+::put (\begin{DoxyParamCaption}\item[{const K \&}]{key,  }\item[{const V \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserts a key-\/value pair into the cache. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to insert. \\
+\hline
+{\em value} & The value to associate with the key. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{storage__engine_8h}{storage\+\_\+engine.\+h}}\end{DoxyCompactItemize}

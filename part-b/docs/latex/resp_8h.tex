@@ -1,0 +1,71 @@
+\doxysection{resp.\+h File Reference}
+\hypertarget{resp_8h}{}\label{resp_8h}\index{resp.h@{resp.h}}
+
+
+Implementation of Redis RESP-\/2 protocol.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+Include dependency graph for resp.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classresp_1_1Value}{resp\+::\+Value}}
+\begin{DoxyCompactList}\small\item\em Class representing a RESP-\/2 value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377b}{resp\+::\+Type}} \{ \newline
+\mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377baafd07943fb4727466372f7c57ddd15e9}{Simple\+String}}
+, \mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377ba902b0d55fddef6f8d651fe1035b7d4bd}{Error}}
+, \mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377baa0faef0851b4294c06f2b94bb1cb2044}{Integer}}
+, \mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377ba00510093f55072f189393e09a32fe31f}{Bulk\+String}}
+, \newline
+\mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377ba4410ec34d9e6c1a68100ca0ce033fb17}{Array}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration for RESP data types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of Redis RESP-\/2 protocol. 
+
+This file contains the definitions for serializing and deserializing RESP-\/2 protocol messages. RESP is the Redis Serialization Protocol used for client-\/server communication. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{resp_8h_a283d6b213569c5d3d4cb63a01846377b}\label{resp_8h_a283d6b213569c5d3d4cb63a01846377b} 
+\index{resp.h@{resp.h}!Type@{Type}}
+\index{Type@{Type}!resp.h@{resp.h}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377b}{resp\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration for RESP data types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SimpleString@{SimpleString}!resp.h@{resp.h}}\index{resp.h@{resp.h}!SimpleString@{SimpleString}}}\Hypertarget{resp_8h_a283d6b213569c5d3d4cb63a01846377baafd07943fb4727466372f7c57ddd15e9}\label{resp_8h_a283d6b213569c5d3d4cb63a01846377baafd07943fb4727466372f7c57ddd15e9} 
+Simple\+String&Simple string prefixed with \textquotesingle{}+\textquotesingle{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!resp.h@{resp.h}}\index{resp.h@{resp.h}!Error@{Error}}}\Hypertarget{resp_8h_a283d6b213569c5d3d4cb63a01846377ba902b0d55fddef6f8d651fe1035b7d4bd}\label{resp_8h_a283d6b213569c5d3d4cb63a01846377ba902b0d55fddef6f8d651fe1035b7d4bd} 
+Error&Error prefixed with \textquotesingle{}-\/\textquotesingle{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Integer@{Integer}!resp.h@{resp.h}}\index{resp.h@{resp.h}!Integer@{Integer}}}\Hypertarget{resp_8h_a283d6b213569c5d3d4cb63a01846377baa0faef0851b4294c06f2b94bb1cb2044}\label{resp_8h_a283d6b213569c5d3d4cb63a01846377baa0faef0851b4294c06f2b94bb1cb2044} 
+Integer&Integer prefixed with \textquotesingle{}\+:\textquotesingle{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BulkString@{BulkString}!resp.h@{resp.h}}\index{resp.h@{resp.h}!BulkString@{BulkString}}}\Hypertarget{resp_8h_a283d6b213569c5d3d4cb63a01846377ba00510093f55072f189393e09a32fe31f}\label{resp_8h_a283d6b213569c5d3d4cb63a01846377ba00510093f55072f189393e09a32fe31f} 
+Bulk\+String&Bulk string prefixed with \textquotesingle{}\$\textquotesingle{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Array@{Array}!resp.h@{resp.h}}\index{resp.h@{resp.h}!Array@{Array}}}\Hypertarget{resp_8h_a283d6b213569c5d3d4cb63a01846377ba4410ec34d9e6c1a68100ca0ce033fb17}\label{resp_8h_a283d6b213569c5d3d4cb63a01846377ba4410ec34d9e6c1a68100ca0ce033fb17} 
+Array&Array prefixed with \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}. \\
+\hline
+
+\end{DoxyEnumFields}

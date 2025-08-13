@@ -1,0 +1,97 @@
+\doxysection{Blink\+Server Class Reference}
+\hypertarget{classBlinkServer}{}\label{classBlinkServer}\index{BlinkServer@{BlinkServer}}
+
+
+Implements a TCP server for BLINK DB.  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBlinkServer_a8301ba84a0858a4c44b31f5107e0d62c}{Blink\+Server}} (int port, \mbox{\hyperlink{classStorageEngine}{Storage\+Engine}} \&storage\+\_\+engine)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classBlinkServer_aa7e7ee913cec6fd521918fddfa2f07e0}\label{classBlinkServer_aa7e7ee913cec6fd521918fddfa2f07e0} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Blink\+Server} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBlinkServer_abfe547581cee3893a54478f6e3563597}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlinkServer_a3d01f8cbfda5a33af148be1a15ada41e}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the server. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBlinkServer_a5730240e0a84e0ee8ca678468bcd11c2}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the server is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a TCP server for BLINK DB. 
+
+This class provides server functionality for the BLINK DB system, handling client connections using epoll for I/O multiplexing. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBlinkServer_a8301ba84a0858a4c44b31f5107e0d62c}\label{classBlinkServer_a8301ba84a0858a4c44b31f5107e0d62c} 
+\index{BlinkServer@{BlinkServer}!BlinkServer@{BlinkServer}}
+\index{BlinkServer@{BlinkServer}!BlinkServer@{BlinkServer}}
+\doxysubsubsection{\texorpdfstring{BlinkServer()}{BlinkServer()}}
+{\footnotesize\ttfamily Blink\+Server\+::\+Blink\+Server (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{\mbox{\hyperlink{classStorageEngine}{Storage\+Engine}} \&}]{storage\+\_\+engine }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port to listen on. \\
+\hline
+{\em storage\+\_\+engine} & Reference to the storage engine. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBlinkServer_a5730240e0a84e0ee8ca678468bcd11c2}\label{classBlinkServer_a5730240e0a84e0ee8ca678468bcd11c2} 
+\index{BlinkServer@{BlinkServer}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!BlinkServer@{BlinkServer}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily bool Blink\+Server\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the server is running. 
+
+\begin{DoxyReturn}{Returns}
+True if the server is running, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBlinkServer_abfe547581cee3893a54478f6e3563597}\label{classBlinkServer_abfe547581cee3893a54478f6e3563597} 
+\index{BlinkServer@{BlinkServer}!start@{start}}
+\index{start@{start}!BlinkServer@{BlinkServer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool Blink\+Server\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the server. 
+
+\begin{DoxyReturn}{Returns}
+True if the server started successfully, false otherwise.
+
+True if the server starts successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classBlinkServer_a3d01f8cbfda5a33af148be1a15ada41e}\label{classBlinkServer_a3d01f8cbfda5a33af148be1a15ada41e} 
+\index{BlinkServer@{BlinkServer}!stop@{stop}}
+\index{stop@{stop}!BlinkServer@{BlinkServer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Blink\+Server\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops the server. 
+
+Stops the server and cleans up resources. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{server_8h}{server.\+h}}\item 
+\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\doxysection{storage\+\_\+engine.\+h File Reference}
+\hypertarget{storage__engine_8h}{}\label{storage__engine_8h}\index{storage\_engine.h@{storage\_engine.h}}
+
+
+Header file for the LSM-\/based storage engine.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$shared\+\_\+mutex$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for storage\+\_\+engine.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}
+\begin{DoxyCompactList}\small\item\em Implements a bloom filter for efficient negative lookups. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLRUCache}{LRUCache$<$ K, V $>$}}
+\begin{DoxyCompactList}\small\item\em Implements an LRU (Least Recently Used) cache. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}
+\begin{DoxyCompactList}\small\item\em Implements a thread pool for background operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classStorageEngine}{Storage\+Engine}}
+\begin{DoxyCompactList}\small\item\em Implements the LSM-\/based storage engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{storage__engine_8h_abc8b3b06fc834d57a69ca6ed5e3dfe3e}\label{storage__engine_8h_abc8b3b06fc834d57a69ca6ed5e3dfe3e} 
+\#define {\bfseries NUM\+\_\+\+SHARDS}~16
+\begin{DoxyCompactList}\small\item\em Number of shards for partitioned memtable. \end{DoxyCompactList}\item 
+\Hypertarget{storage__engine_8h_a583ed65d9dd7e3ab90cbfe21c9ed8aa9}\label{storage__engine_8h_a583ed65d9dd7e3ab90cbfe21c9ed8aa9} 
+\#define {\bfseries NUM\+\_\+\+CACHES}~4
+\begin{DoxyCompactList}\small\item\em Number of read cache segments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the LSM-\/based storage engine. 
+
+This file contains the declaration of the \doxylink{classStorageEngine}{Storage\+Engine} class and its supporting components, including memtables, SSTables, bloom filters, LRU caches, and thread pools. 

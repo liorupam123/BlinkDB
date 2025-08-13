@@ -1,0 +1,30 @@
+\doxysection{server.\+h File Reference}
+\hypertarget{server_8h}{}\label{server_8h}\index{server.h@{server.h}}
+
+
+Header file for the BLINK DB server.  
+
+
+{\ttfamily \#include "{}storage\+\_\+engine.\+h"{}}\newline
+{\ttfamily \#include "{}resp.\+h"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+Include dependency graph for server.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBlinkServer}{Blink\+Server}}
+\begin{DoxyCompactList}\small\item\em Implements a TCP server for BLINK DB. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the BLINK DB server. 
+
+This file contains the declaration of the \doxylink{classBlinkServer}{Blink\+Server} class, which handles network connections using epoll for efficient I/O multiplexing. 

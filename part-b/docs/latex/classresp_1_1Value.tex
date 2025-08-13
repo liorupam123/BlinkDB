@@ -1,0 +1,365 @@
+\doxysection{resp\+::Value Class Reference}
+\hypertarget{classresp_1_1Value}{}\label{classresp_1_1Value}\index{resp::Value@{resp::Value}}
+
+
+Class representing a RESP-\/2 value.  
+
+
+
+
+{\ttfamily \#include $<$resp.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377b}{Type}} \mbox{\hyperlink{classresp_1_1Value_a51c3aad06426fed5794685d7c698b6c3}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Get the type of this value. \end{DoxyCompactList}\item 
+std\+::optional$<$ std\+::string $>$ \mbox{\hyperlink{classresp_1_1Value_ad8950337284d13ab5d54e3c00f5e372c}{get\+String}} () const
+\begin{DoxyCompactList}\small\item\em Get the string value. \end{DoxyCompactList}\item 
+std\+::optional$<$ int64\+\_\+t $>$ \mbox{\hyperlink{classresp_1_1Value_a2cb6e0b6628c9326943e5c1413832317}{get\+Integer}} () const
+\begin{DoxyCompactList}\small\item\em Get the integer value. \end{DoxyCompactList}\item 
+std\+::optional$<$ std\+::vector$<$ \mbox{\hyperlink{classresp_1_1Value}{Value}} $>$ $>$ \mbox{\hyperlink{classresp_1_1Value_af95564f29a29252d16f0f7561d3c6ffc}{get\+Array}} () const
+\begin{DoxyCompactList}\small\item\em Get the array values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classresp_1_1Value_a2ba963f5bdb68e9368d632aca41d49b5}{is\+Null}} () const
+\begin{DoxyCompactList}\small\item\em Check if this is a null value. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classresp_1_1Value_abacebf456533493d1e6581d3680e7fdd}{serialize}} () const
+\begin{DoxyCompactList}\small\item\em Serialize this value to a RESP-\/2 message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classresp_1_1Value}{Value}} \mbox{\hyperlink{classresp_1_1Value_af76b8addf4284c77c62328e9c2be7993}{create\+Simple\+String}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Create a RESP Simple String. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classresp_1_1Value}{Value}} \mbox{\hyperlink{classresp_1_1Value_abd5606ee241e786aa03442fdb73d13fc}{create\+Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Create a RESP Error. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classresp_1_1Value}{Value}} \mbox{\hyperlink{classresp_1_1Value_acfd94c5c4de7baef74503a03690979ae}{create\+Integer}} (int64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Create a RESP Integer. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classresp_1_1Value}{Value}} \mbox{\hyperlink{classresp_1_1Value_a96f776d2b3296e52f07b941de11c3504}{create\+Bulk\+String}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Create a RESP Bulk String. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classresp_1_1Value}{Value}} \mbox{\hyperlink{classresp_1_1Value_afbfddcd4675753839aaade69972cc26d}{create\+Null\+Bulk\+String}} ()
+\begin{DoxyCompactList}\small\item\em Create a RESP Null Bulk String. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classresp_1_1Value}{Value}} \mbox{\hyperlink{classresp_1_1Value_a63e8290bfc6b5d0d0a21649ce018e739}{create\+Array}} (const std\+::vector$<$ \mbox{\hyperlink{classresp_1_1Value}{Value}} $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Create a RESP Array. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classresp_1_1Value}{Value}} \mbox{\hyperlink{classresp_1_1Value_ad0af81ed7f9539cc941eb382aa80bd1c}{create\+Null\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Create a RESP Null Array. \end{DoxyCompactList}\item 
+static std\+::optional$<$ \mbox{\hyperlink{classresp_1_1Value}{Value}} $>$ \mbox{\hyperlink{classresp_1_1Value_a8f7cd692aca7d57288557b7f3c638c40}{deserialize}} (const std\+::string \&data, size\+\_\+t \&consumed)
+\begin{DoxyCompactList}\small\item\em Deserialize a RESP-\/2 message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a RESP-\/2 value. 
+
+This class provides methods to create, serialize, and deserialize RESP-\/2 values. It supports all RESP-\/2 data types, including Simple Strings, Errors, Integers, Bulk Strings, and Arrays. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classresp_1_1Value_a63e8290bfc6b5d0d0a21649ce018e739}\label{classresp_1_1Value_a63e8290bfc6b5d0d0a21649ce018e739} 
+\index{resp::Value@{resp::Value}!createArray@{createArray}}
+\index{createArray@{createArray}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{createArray()}{createArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classresp_1_1Value}{Value}} resp\+::\+Value\+::create\+Array (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classresp_1_1Value}{Value}} $>$ \&}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a RESP Array. 
+
+Creates a RESP Array value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & The array values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classresp_1_1Value}{Value} object representing an Array.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em values} & The array elements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classresp_1_1Value}{Value} object representing an Array. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_a96f776d2b3296e52f07b941de11c3504}\label{classresp_1_1Value_a96f776d2b3296e52f07b941de11c3504} 
+\index{resp::Value@{resp::Value}!createBulkString@{createBulkString}}
+\index{createBulkString@{createBulkString}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{createBulkString()}{createBulkString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classresp_1_1Value}{Value}} resp\+::\+Value\+::create\+Bulk\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a RESP Bulk String. 
+
+Creates a RESP Bulk String value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classresp_1_1Value}{Value} object representing a Bulk String.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classresp_1_1Value}{Value} object representing a Bulk String. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_abd5606ee241e786aa03442fdb73d13fc}\label{classresp_1_1Value_abd5606ee241e786aa03442fdb73d13fc} 
+\index{resp::Value@{resp::Value}!createError@{createError}}
+\index{createError@{createError}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{createError()}{createError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classresp_1_1Value}{Value}} resp\+::\+Value\+::create\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a RESP Error. 
+
+Creates a RESP Error value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classresp_1_1Value}{Value} object representing an Error.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classresp_1_1Value}{Value} object representing an Error. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_acfd94c5c4de7baef74503a03690979ae}\label{classresp_1_1Value_acfd94c5c4de7baef74503a03690979ae} 
+\index{resp::Value@{resp::Value}!createInteger@{createInteger}}
+\index{createInteger@{createInteger}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{createInteger()}{createInteger()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classresp_1_1Value}{Value}} resp\+::\+Value\+::create\+Integer (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a RESP Integer. 
+
+Creates a RESP Integer value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The integer value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classresp_1_1Value}{Value} object representing an Integer.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The integer value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classresp_1_1Value}{Value} object representing an Integer. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_ad0af81ed7f9539cc941eb382aa80bd1c}\label{classresp_1_1Value_ad0af81ed7f9539cc941eb382aa80bd1c} 
+\index{resp::Value@{resp::Value}!createNullArray@{createNullArray}}
+\index{createNullArray@{createNullArray}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{createNullArray()}{createNullArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classresp_1_1Value}{Value}} resp\+::\+Value\+::create\+Null\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a RESP Null Array. 
+
+Creates a RESP Null Array value.
+
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classresp_1_1Value}{Value} object representing a Null Array.
+
+A \doxylink{classresp_1_1Value}{Value} object representing a Null Array. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_afbfddcd4675753839aaade69972cc26d}\label{classresp_1_1Value_afbfddcd4675753839aaade69972cc26d} 
+\index{resp::Value@{resp::Value}!createNullBulkString@{createNullBulkString}}
+\index{createNullBulkString@{createNullBulkString}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{createNullBulkString()}{createNullBulkString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classresp_1_1Value}{Value}} resp\+::\+Value\+::create\+Null\+Bulk\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a RESP Null Bulk String. 
+
+Creates a RESP Null Bulk String value.
+
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classresp_1_1Value}{Value} object representing a Null Bulk String.
+
+A \doxylink{classresp_1_1Value}{Value} object representing a Null Bulk String. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_af76b8addf4284c77c62328e9c2be7993}\label{classresp_1_1Value_af76b8addf4284c77c62328e9c2be7993} 
+\index{resp::Value@{resp::Value}!createSimpleString@{createSimpleString}}
+\index{createSimpleString@{createSimpleString}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{createSimpleString()}{createSimpleString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classresp_1_1Value}{Value}} resp\+::\+Value\+::create\+Simple\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a RESP Simple String. 
+
+Creates a RESP Simple String value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{classresp_1_1Value}{Value} object representing a Simple String.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classresp_1_1Value}{Value} object representing a Simple String. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_a8f7cd692aca7d57288557b7f3c638c40}\label{classresp_1_1Value_a8f7cd692aca7d57288557b7f3c638c40} 
+\index{resp::Value@{resp::Value}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{classresp_1_1Value}{Value}} $>$ resp\+::\+Value\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data,  }\item[{size\+\_\+t \&}]{consumed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deserialize a RESP-\/2 message. 
+
+Deserializes a RESP value from a string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em data} & The serialized RESP-\/2 message. \\
+\hline
+\mbox{\texttt{ out}}  & {\em consumed} & The number of bytes consumed during deserialization. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The deserialized \doxylink{classresp_1_1Value}{Value} object, or std\+::nullopt if deserialization fails.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The serialized RESP string. \\
+\hline
+{\em consumed} & The number of characters consumed during deserialization. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The deserialized \doxylink{classresp_1_1Value}{Value} object or std\+::nullopt if deserialization fails. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_af95564f29a29252d16f0f7561d3c6ffc}\label{classresp_1_1Value_af95564f29a29252d16f0f7561d3c6ffc} 
+\index{resp::Value@{resp::Value}!getArray@{getArray}}
+\index{getArray@{getArray}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{getArray()}{getArray()}}
+{\footnotesize\ttfamily std\+::optional$<$ std\+::vector$<$ \mbox{\hyperlink{classresp_1_1Value}{Value}} $>$ $>$ resp\+::\+Value\+::get\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the array values. 
+
+Gets the array content of the RESP value, if applicable.
+
+\begin{DoxyReturn}{Returns}
+The array values if this is an array type, or std\+::nullopt otherwise.
+
+The array content or std\+::nullopt if not applicable. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_a2cb6e0b6628c9326943e5c1413832317}\label{classresp_1_1Value_a2cb6e0b6628c9326943e5c1413832317} 
+\index{resp::Value@{resp::Value}!getInteger@{getInteger}}
+\index{getInteger@{getInteger}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{getInteger()}{getInteger()}}
+{\footnotesize\ttfamily std\+::optional$<$ int64\+\_\+t $>$ resp\+::\+Value\+::get\+Integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the integer value. 
+
+Gets the integer content of the RESP value, if applicable.
+
+\begin{DoxyReturn}{Returns}
+The integer value if this is an integer type, or std\+::nullopt otherwise.
+
+The integer content or std\+::nullopt if not applicable. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_ad8950337284d13ab5d54e3c00f5e372c}\label{classresp_1_1Value_ad8950337284d13ab5d54e3c00f5e372c} 
+\index{resp::Value@{resp::Value}!getString@{getString}}
+\index{getString@{getString}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily std\+::optional$<$ std\+::string $>$ resp\+::\+Value\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the string value. 
+
+Gets the string content of the RESP value, if applicable.
+
+\begin{DoxyReturn}{Returns}
+The string value if this is a string type, or std\+::nullopt otherwise.
+
+The string content or std\+::nullopt if not applicable. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_a51c3aad06426fed5794685d7c698b6c3}\label{classresp_1_1Value_a51c3aad06426fed5794685d7c698b6c3} 
+\index{resp::Value@{resp::Value}!getType@{getType}}
+\index{getType@{getType}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{resp_8h_a283d6b213569c5d3d4cb63a01846377b}{Type}} resp\+::\+Value\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the type of this value. 
+
+Gets the type of the RESP value.
+
+\begin{DoxyReturn}{Returns}
+The type of the value. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_a2ba963f5bdb68e9368d632aca41d49b5}\label{classresp_1_1Value_a2ba963f5bdb68e9368d632aca41d49b5} 
+\index{resp::Value@{resp::Value}!isNull@{isNull}}
+\index{isNull@{isNull}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{isNull()}{isNull()}}
+{\footnotesize\ttfamily bool resp\+::\+Value\+::is\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if this is a null value. 
+
+Checks if the RESP value is null.
+
+\begin{DoxyReturn}{Returns}
+True if this is a null value, false otherwise.
+
+True if the value is null, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classresp_1_1Value_abacebf456533493d1e6581d3680e7fdd}\label{classresp_1_1Value_abacebf456533493d1e6581d3680e7fdd} 
+\index{resp::Value@{resp::Value}!serialize@{serialize}}
+\index{serialize@{serialize}!resp::Value@{resp::Value}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::string resp\+::\+Value\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Serialize this value to a RESP-\/2 message. 
+
+Serializes the RESP value into a string.
+
+\begin{DoxyReturn}{Returns}
+The serialized RESP-\/2 message as a string.
+
+The serialized RESP string. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{resp_8h}{resp.\+h}}\item 
+\mbox{\hyperlink{resp_8cpp}{resp.\+cpp}}\end{DoxyCompactItemize}

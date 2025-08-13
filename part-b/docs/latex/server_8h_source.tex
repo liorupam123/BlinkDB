@@ -1,0 +1,63 @@
+\doxysection{server.\+h}
+\hypertarget{server_8h_source}{}\label{server_8h_source}\mbox{\hyperlink{server_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ SERVER\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SERVER\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{storage__engine_8h}{storage\_engine.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{resp_8h}{resp.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBlinkServer}{BlinkServer}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classBlinkServer}{BlinkServer}}(\textcolor{keywordtype}{int}\ port,\ \mbox{\hyperlink{classStorageEngine}{StorageEngine}}\&\ storage\_engine);}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classBlinkServer_aa7e7ee913cec6fd521918fddfa2f07e0}{\string~BlinkServer}}();}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBlinkServer_abfe547581cee3893a54478f6e3563597}{start}}();}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBlinkServer_a3d01f8cbfda5a33af148be1a15ada41e}{stop}}();}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBlinkServer_a5730240e0a84e0ee8ca678468bcd11c2}{isRunning}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{struct\ }ClientConnection\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fd;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::string\ buffer;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::string\ output\_buffer;\ }
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ initEpoll();}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ startListening();}
+\DoxyCodeLine{00081\ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ acceptClient();}
+\DoxyCodeLine{00086\ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ handleClient(\textcolor{keywordtype}{int}\ client\_fd);}
+\DoxyCodeLine{00092\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classresp_1_1Value}{resp::Value}}\ processCommand(\textcolor{keyword}{const}\ \mbox{\hyperlink{classresp_1_1Value}{resp::Value}}\&\ command);}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ sendResponse(\textcolor{keywordtype}{int}\ client\_fd,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classresp_1_1Value}{resp::Value}}\&\ response);}
+\DoxyCodeLine{00106\ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ closeClient(\textcolor{keywordtype}{int}\ client\_fd);}
+\DoxyCodeLine{00112\ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ serverLoop();}
+\DoxyCodeLine{00117\ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ port\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classStorageEngine}{StorageEngine}}\&\ storage\_engine\_;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ server\_fd\_\ =\ -\/1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ epoll\_fd\_\ =\ -\/1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ std::atomic<bool>\ running\_\ =\ \{\textcolor{keyword}{false}\};\ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ std::thread\ server\_thread\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ std::unordered\_map<int,\ ClientConnection>\ clients\_;\ }
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERVER\_H}}
+
+\end{DoxyCode}

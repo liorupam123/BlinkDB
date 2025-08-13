@@ -1,0 +1,81 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Entry point for the BLINK DB server application.  
+
+
+{\ttfamily \#include "{}storage\+\_\+engine.\+h"{}}\newline
+{\ttfamily \#include "{}server.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_ad2e59c7203b3bddc1bc9a2224b52e8e7}{signal\+Handler}} (int signal)
+\begin{DoxyCompactList}\small\item\em Signal handler for gracefully shutting down the server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function for the BLINK DB server application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_a2629d181dde7abdff4623b334ef36a5f}\label{main_8cpp_a2629d181dde7abdff4623b334ef36a5f} 
+\mbox{\hyperlink{classBlinkServer}{Blink\+Server}} \texorpdfstring{$\ast$}{*} {\bfseries g\+\_\+server} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the BLINK DB server application. 
+
+This file initializes the BLINK DB server, sets up signal handling, and starts the server to handle client requests. It uses the LSM-\/based storage engine for efficient data management. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function for the BLINK DB server application. 
+
+This function parses command-\/line arguments, initializes the storage engine and server, sets up signal handlers, and starts the server to handle client requests.
+
+Supported command-\/line options\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/port PORT}\+: Set the server port (default\+: 9001).
+\item {\ttfamily -\/-\/memory SIZE}\+: Set the maximum memory size in MB for the storage engine (default\+: 100MB).
+\item {\ttfamily -\/-\/help}\+: Display usage information.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of command-\/line arguments. \\
+\hline
+{\em argv} & The array of command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on successful execution, or a non-\/zero value on error. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_ad2e59c7203b3bddc1bc9a2224b52e8e7}\label{main_8cpp_ad2e59c7203b3bddc1bc9a2224b52e8e7} 
+\index{main.cpp@{main.cpp}!signalHandler@{signalHandler}}
+\index{signalHandler@{signalHandler}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{signalHandler()}{signalHandler()}}
+{\footnotesize\ttfamily void signal\+Handler (\begin{DoxyParamCaption}\item[{int}]{signal }\end{DoxyParamCaption})}
+
+
+
+Signal handler for gracefully shutting down the server. 
+
+This function is called when the server receives a termination signal (e.\+g., SIGINT or SIGTERM). It stops the server and performs cleanup.
+
+
+\begin{DoxyParams}{Parameters}
+{\em signal} & The signal number received. \\
+\hline
+\end{DoxyParams}

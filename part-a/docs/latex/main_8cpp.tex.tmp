@@ -1,0 +1,96 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Entry point for the BLINK DB application.  
+
+
+{\ttfamily \#include "{}storage\+\_\+engine.\+h"{}}\newline
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{main_8cpp_aa31c7f9de0cb78056f8609b204d9d332}{tokenize}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Tokenizes a string into a vector of words. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{main_8cpp_a11f052d4943b32d339e474bb4c29bbec}{extract\+\_\+value}} (const string \&input, const string \&key)
+\begin{DoxyCompactList}\small\item\em Extracts the value associated with a key from an input string. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{main_8cpp_af58e22055cd98c3e67565cecda6c362a}{get\+\_\+current\+\_\+working\+\_\+dir}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current working directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function for the BLINK DB application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point for the BLINK DB application. 
+
+This file contains the main function and REPL (Read-\/\+Eval-\/\+Print Loop) for interacting with the BLINK DB storage engine, now powered by an LSM tree. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a11f052d4943b32d339e474bb4c29bbec}\label{main_8cpp_a11f052d4943b32d339e474bb4c29bbec} 
+\index{main.cpp@{main.cpp}!extract\_value@{extract\_value}}
+\index{extract\_value@{extract\_value}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{extract\_value()}{extract\_value()}}
+{\footnotesize\ttfamily string extract\+\_\+value (\begin{DoxyParamCaption}\item[{const string \&}]{input,  }\item[{const string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Extracts the value associated with a key from an input string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string containing the key-\/value pair. \\
+\hline
+{\em key} & The key whose value needs to be extracted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value associated with the key, or an empty string if not found. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_af58e22055cd98c3e67565cecda6c362a}\label{main_8cpp_af58e22055cd98c3e67565cecda6c362a} 
+\index{main.cpp@{main.cpp}!get\_current\_working\_dir@{get\_current\_working\_dir}}
+\index{get\_current\_working\_dir@{get\_current\_working\_dir}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_current\_working\_dir()}{get\_current\_working\_dir()}}
+{\footnotesize\ttfamily string get\+\_\+current\+\_\+working\+\_\+dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current working directory. 
+
+\begin{DoxyReturn}{Returns}
+The current working directory as a string 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function for the BLINK DB application. 
+
+This function initializes the storage engine, starts the REPL (Read-\/\+Eval-\/\+Print Loop), and processes user commands such as SET, GET, DEL, SYNC, DEBUG, and EXIT.
+
+\begin{DoxyReturn}{Returns}
+0 on successful execution. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_aa31c7f9de0cb78056f8609b204d9d332}\label{main_8cpp_aa31c7f9de0cb78056f8609b204d9d332} 
+\index{main.cpp@{main.cpp}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily vector$<$ string $>$ tokenize (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Tokenizes a string into a vector of words. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string to tokenize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of tokens (words) from the input string. 
+\end{DoxyReturn}

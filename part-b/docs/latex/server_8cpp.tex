@@ -1,0 +1,35 @@
+\doxysection{server.\+cpp File Reference}
+\hypertarget{server_8cpp}{}\label{server_8cpp}\index{server.cpp@{server.cpp}}
+
+
+Implementation of the BLINK DB server.  
+
+
+{\ttfamily \#include "{}server.\+h"{}}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/epoll.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for server.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{server_8cpp_a55853dfa4cf88a9ab477f598e9f85004}\label{server_8cpp_a55853dfa4cf88a9ab477f598e9f85004} 
+const int {\bfseries MAX\+\_\+\+EVENTS} = 64
+\begin{DoxyCompactList}\small\item\em Maximum number of events to process at once. \end{DoxyCompactList}\item 
+\Hypertarget{server_8cpp_a60b0b23211b21e1a5f6f6735e7ed7d15}\label{server_8cpp_a60b0b23211b21e1a5f6f6735e7ed7d15} 
+const int {\bfseries BACKLOG} = 128
+\begin{DoxyCompactList}\small\item\em Maximum number of pending connections in the listen queue. \end{DoxyCompactList}\item 
+\Hypertarget{server_8cpp_a91f806c1bc7c1f4f402a627773840252}\label{server_8cpp_a91f806c1bc7c1f4f402a627773840252} 
+const int {\bfseries BUFFER\+\_\+\+SIZE} = 4096
+\begin{DoxyCompactList}\small\item\em Buffer size for reading client data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the BLINK DB server. 
+

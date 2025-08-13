@@ -1,0 +1,112 @@
+\doxysection{client.\+cpp File Reference}
+\hypertarget{client_8cpp}{}\label{client_8cpp}\index{client.cpp@{client.cpp}}
+
+
+Simple client for the BLINK DB server.  
+
+
+{\ttfamily \#include "{}resp.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for client.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{client_8cpp_aad7cbdf76671f1d23c57b15faa5a212c}{print\+Usage}} (const char \texorpdfstring{$\ast$}{*}progname)
+\begin{DoxyCompactList}\small\item\em Print usage information for the client. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{client_8cpp_a097835ac1097896976245fb22748f1bc}{parse\+Command}} (const std\+::string \&cmd)
+\begin{DoxyCompactList}\small\item\em Parse a command string into tokens. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{client_8cpp_a8f9e7330bcda810ca612c4c8e1e44f00}{format\+Response}} (const \mbox{\hyperlink{classresp_1_1Value}{resp\+::\+Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Format a RESP response for display. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{client_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function for the BLINK DB client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple client for the BLINK DB server. 
+
+This file contains a simple client implementation for testing the BLINK DB server. It connects to the server and allows the user to send commands interactively. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{client_8cpp_a8f9e7330bcda810ca612c4c8e1e44f00}\label{client_8cpp_a8f9e7330bcda810ca612c4c8e1e44f00} 
+\index{client.cpp@{client.cpp}!formatResponse@{formatResponse}}
+\index{formatResponse@{formatResponse}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{formatResponse()}{formatResponse()}}
+{\footnotesize\ttfamily std\+::string format\+Response (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classresp_1_1Value}{resp\+::\+Value}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Format a RESP response for display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The RESP value to format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A formatted string representation of the RESP value. 
+\end{DoxyReturn}
+\Hypertarget{client_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{client_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{client.cpp@{client.cpp}!main@{main}}
+\index{main@{main}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Main function for the BLINK DB client. 
+
+This function connects to the BLINK DB server, sends commands interactively, and displays the server\textquotesingle{}s responses.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of command-\/line arguments. \\
+\hline
+{\em argv} & The array of command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on successful execution, or a non-\/zero value on error. 
+\end{DoxyReturn}
+\Hypertarget{client_8cpp_a097835ac1097896976245fb22748f1bc}\label{client_8cpp_a097835ac1097896976245fb22748f1bc} 
+\index{client.cpp@{client.cpp}!parseCommand@{parseCommand}}
+\index{parseCommand@{parseCommand}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{parseCommand()}{parseCommand()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ parse\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Parse a command string into tokens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & The command string to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of tokens extracted from the command string. 
+\end{DoxyReturn}
+\Hypertarget{client_8cpp_aad7cbdf76671f1d23c57b15faa5a212c}\label{client_8cpp_aad7cbdf76671f1d23c57b15faa5a212c} 
+\index{client.cpp@{client.cpp}!printUsage@{printUsage}}
+\index{printUsage@{printUsage}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{printUsage()}{printUsage()}}
+{\footnotesize\ttfamily void print\+Usage (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{progname }\end{DoxyParamCaption})}
+
+
+
+Print usage information for the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em progname} & The name of the program. \\
+\hline
+\end{DoxyParams}

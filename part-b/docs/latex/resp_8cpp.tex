@@ -1,0 +1,39 @@
+\doxysection{resp.\+cpp File Reference}
+\hypertarget{resp_8cpp}{}\label{resp_8cpp}\index{resp.cpp@{resp.cpp}}
+
+
+Implementation of Redis RESP-\/2 protocol.  
+
+
+{\ttfamily \#include "{}resp.\+h"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for resp.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{resp_8cpp_aa6603d945de58f2fc62ab019a7587abb}\label{resp_8cpp_aa6603d945de58f2fc62ab019a7587abb} 
+const char {\bfseries resp\+::\+CRLF} \mbox{[}$\,$\mbox{]} = "{}\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em Carriage return and line feed sequence. \end{DoxyCompactList}\item 
+\Hypertarget{resp_8cpp_af329771a7e910a92dd954314a420ecc2}\label{resp_8cpp_af329771a7e910a92dd954314a420ecc2} 
+const char {\bfseries resp\+::\+SIMPLE\+\_\+\+STRING\+\_\+\+PREFIX} = \textquotesingle{}+\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Prefix for RESP Simple Strings. \end{DoxyCompactList}\item 
+\Hypertarget{resp_8cpp_ae568d429e4fa57af0940c0753b8acb80}\label{resp_8cpp_ae568d429e4fa57af0940c0753b8acb80} 
+const char {\bfseries resp\+::\+ERROR\+\_\+\+PREFIX} = \textquotesingle{}-\/\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Prefix for RESP Errors. \end{DoxyCompactList}\item 
+\Hypertarget{resp_8cpp_a8439c37c29238d7d103829f9eb166506}\label{resp_8cpp_a8439c37c29238d7d103829f9eb166506} 
+const char {\bfseries resp\+::\+INTEGER\+\_\+\+PREFIX} = \textquotesingle{}\+:\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Prefix for RESP Integers. \end{DoxyCompactList}\item 
+\Hypertarget{resp_8cpp_ac10f88187c34cd55f6c6190c3bcbcd3f}\label{resp_8cpp_ac10f88187c34cd55f6c6190c3bcbcd3f} 
+const char {\bfseries resp\+::\+BULK\+\_\+\+STRING\+\_\+\+PREFIX} = \textquotesingle{}\$\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Prefix for RESP Bulk Strings. \end{DoxyCompactList}\item 
+\Hypertarget{resp_8cpp_aff261e7e14c3c04b7504c64421031740}\label{resp_8cpp_aff261e7e14c3c04b7504c64421031740} 
+const char {\bfseries resp\+::\+ARRAY\+\_\+\+PREFIX} = \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Prefix for RESP Arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of Redis RESP-\/2 protocol. 
+
+This file provides the implementation of the RESP (REdis Serialization Protocol) used for communication between the client and server. It includes serialization and deserialization of RESP data types such as Simple Strings, Errors, Integers, Bulk Strings, and Arrays. 
